@@ -7,7 +7,6 @@ link_main_page = "http://selenium1py.pythonanywhere.com/"
 
 def test_guest_can_go_to_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
-    #link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209?promo=midsummer"
     # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес
     page = MainPage(browser, link)
     # открываем страницу
@@ -16,7 +15,6 @@ def test_guest_can_go_to_login_page(browser):
     page.go_to_login_page()
     login_page = LoginPage(browser, browser.current_url)
     login_page.should_be_login_page()
-    #page.should_be_login_link()
 
 
 def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
